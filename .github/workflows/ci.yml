@@ -32,3 +32,11 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  deploy-check:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Confirm ready
+        run: echo "All tests passed on all Node versions — ready for the next stage!"      
